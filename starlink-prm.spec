@@ -10,7 +10,6 @@ Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/primdat/prm.tar.Z
 Patch0:		%{name}-make.patch
 URL:		http://www.starlink.rl.ac.uk/static_www/soft_further_PRIMDAT.html
 BuildRequires:	gcc-g77
-BuildRequires:	sed >= 4.0
 BuildRequires:	starlink-sae-devel
 Requires:	starlink-sae
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
