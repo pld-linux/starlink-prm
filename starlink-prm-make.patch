@@ -1,0 +1,36 @@
+--- starlink-prm-1.3_1.218/mk.orig	1997-01-22 17:56:18.000000000 +0100
++++ starlink-prm-1.3_1.218/mk	2003-11-02 14:18:45.589704712 +0100
+@@ -368,11 +368,12 @@
+ #  ----------------------
+             ix86_Linux)
+                AR_IN='ar r'
++               BLD_SHR='f() { g77 -shared $$3 -Wl,-soname=$$1 -o $$1 $$2;}; f'
+                CC='gcc'
+-               CFLAGS='-I$(STAR_INC) -O'
++               CFLAGS='-I$(STAR_INC) $(OPT) -fPIC'
+                COMPILER_VARIANT='_$(FC)'
+                FC='g77'
+-               FFLAGS='-fno-second-underscore -O'
++               FFLAGS='-fno-second-underscore $(OPT) -fPIC'
+                LINK='ln -s'
+                PLATFORM_C='num_han.c num1_cvt.c'
+                RANLIB='ranlib'
+--- starlink-prm-1.3_1.218/makefile.orig	2002-11-26 11:12:05.000000000 +0100
++++ starlink-prm-1.3_1.218/makefile	2003-11-02 14:20:05.111615544 +0100
+@@ -708,11 +708,14 @@
+ #  them. The third argument to $(BLD_SHR) should provide the information
+ #  necessary to link any libraries called by this package.
+ 
+-SHAREABLE_LIBRARIES = lib$(PKG_NAME)$(SHARE)
++SHAREABLE_LIBRARIES = lib$(PKG_NAME)_a$(SHARE) lib$(PKG_NAME)$(SHARE)
+ 
+ lib$(PKG_NAME)$(SHARE): $(OBJECT_FILES)
+ 	touch $@
+-	$(BLD_SHR) $@ '$(OBJECT_FILES)' '-L$(STAR_LIB) -lems'
++	$(BLD_SHR) $@ '$(OBJECT_FILES)' '-L$(STAR_SHARE) -lems -L. -l$(PKG_NAME)_a'
++
++lib$(PKG_NAME)_a$(SHARE): $(OBJECT_A_FILES)
++	$(BLD_SHR) $@ '$(OBJECT_A_FILES)'
+ 
+ #  Name of the date stamp file.  This is used to record the time of the
+ #  most recent build for use in subsequent operations that require it.

@@ -7,6 +7,7 @@ License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/primdat/prm.tar.Z
 # Source0-md5:	2745c7bc1ee10efcd3b656c0d4ad5cdb
+Patch0:		%{name}-make.patch
 URL:		http://www.starlink.rl.ac.uk/static_www/soft_further_PRIMDAT.html
 BuildRequires:	gcc-g77
 BuildRequires:	sed >= 4.0
@@ -57,13 +58,11 @@ Statyczna biblioteka Starlink PRIMDAT.
 
 %prep
 %setup -q -c
-
-sed -i -e "s/ -O'/ %{rpmcflags} -fPIC'/" mk
-sed -i -e "s/\\('-L\\\$(STAR_\\)LIB) /\\1SHARE) /" makefile
+%patch -p1
 
 %build
+OPT="%{rpmcflags}" \
 SYSTEM=ix86_Linux \
-BLD_SHR='f() { g77 -shared -Wl,-soname $$1 -o $$1 $$2;}; f' \
 ./mk build \
 	STARLINK=%{stardir} \
 
@@ -96,8 +95,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{stardir}/bin/prm_dev
 %attr(755,root,root) %{stardir}/bin/prm_link*
 %{stardir}/include/*
-%{stardir}/lib/libprm_a.a
 
 %files static
 %defattr(644,root,root,755)
-%{stardir}/lib/libprm.a
+%{stardir}/lib/*.a
