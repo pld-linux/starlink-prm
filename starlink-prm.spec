@@ -5,8 +5,7 @@ Version:	1.3_1.218
 Release:	1
 License:	GPL
 Group:		Libraries
-#Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/primdat/prm.tar.Z
-Source0:	prm.tar.Z
+Source0:	ftp://ftp.starlink.rl.ac.uk/pub/ussc/store/primdat/prm.tar.Z
 # Source0-md5:	2745c7bc1ee10efcd3b656c0d4ad5cdb
 Patch0:		%{name}-make.patch
 URL:		http://www.starlink.rl.ac.uk/static_www/soft_further_PRIMDAT.html
