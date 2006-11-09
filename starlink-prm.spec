@@ -36,7 +36,7 @@ obs³ugiwanych przez hierarchiczny system danych Starlink (HDS).
 Summary:	Header files for PRIMDAT library
 Summary(pl):	Pliki nag³ówkowe biblioteki PRIMDAT
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for PRIMDAT library.
@@ -48,7 +48,7 @@ Pliki nag³ówkowe biblioteki PRIMDAT.
 Summary:	Static Starlink PRIMDAT library
 Summary(pl):	Statyczna biblioteka Starlink PRIMDAT
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static Starlink PRIMDAT library.
