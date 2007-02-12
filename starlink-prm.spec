@@ -1,5 +1,5 @@
 Summary:	PRIMDAT - Processing of Primitive Numerical Data
-Summary(pl):	PRIMDAT - przetwarzanie prostych danych numerycznych
+Summary(pl.UTF-8):   PRIMDAT - przetwarzanie prostych danych numerycznych
 Name:		starlink-prm
 Version:	1.3_1.218
 Release:	1
@@ -25,35 +25,35 @@ operations, type conversion and inter-comparison of any of the
 primitive numerical data types supported by the Starlink Hierarchical
 Data System (HDS).
 
-%description -l pl
-Pakiet PRIMDAT to zbiór funkcji fortranowych daj±cych obs³ugê
-przetwarzania prostych danych. Funkcje z tego pakietu mog± byæ u¿ywane
+%description -l pl.UTF-8
+Pakiet PRIMDAT to zbiÃ³r funkcji fortranowych dajÄ…cych obsÅ‚ugÄ™
+przetwarzania prostych danych. Funkcje z tego pakietu mogÄ… byÄ‡ uÅ¼ywane
 do wykonywania operacji arytmetycznych i matematycznych, konwersji
-typów i porównywania dowolnych prostych typów danych numerycznych
-obs³ugiwanych przez hierarchiczny system danych Starlink (HDS).
+typÃ³w i porÃ³wnywania dowolnych prostych typÃ³w danych numerycznych
+obsÅ‚ugiwanych przez hierarchiczny system danych Starlink (HDS).
 
 %package devel
 Summary:	Header files for PRIMDAT library
-Summary(pl):	Pliki nag³ówkowe biblioteki PRIMDAT
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki PRIMDAT
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for PRIMDAT library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki PRIMDAT.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki PRIMDAT.
 
 %package static
 Summary:	Static Starlink PRIMDAT library
-Summary(pl):	Statyczna biblioteka Starlink PRIMDAT
+Summary(pl.UTF-8):   Statyczna biblioteka Starlink PRIMDAT
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static Starlink PRIMDAT library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka Starlink PRIMDAT.
 
 %prep
