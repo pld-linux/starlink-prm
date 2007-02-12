@@ -1,5 +1,5 @@
 Summary:	PRIMDAT - Processing of Primitive Numerical Data
-Summary(pl.UTF-8):   PRIMDAT - przetwarzanie prostych danych numerycznych
+Summary(pl.UTF-8):	PRIMDAT - przetwarzanie prostych danych numerycznych
 Name:		starlink-prm
 Version:	1.3_1.218
 Release:	1
@@ -34,7 +34,7 @@ obsługiwanych przez hierarchiczny system danych Starlink (HDS).
 
 %package devel
 Summary:	Header files for PRIMDAT library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki PRIMDAT
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki PRIMDAT
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -46,7 +46,7 @@ Pliki nagłówkowe biblioteki PRIMDAT.
 
 %package static
 Summary:	Static Starlink PRIMDAT library
-Summary(pl.UTF-8):   Statyczna biblioteka Starlink PRIMDAT
+Summary(pl.UTF-8):	Statyczna biblioteka Starlink PRIMDAT
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
